@@ -1,0 +1,58 @@
+schema: "paperclip/v1"
+agents:
+  chief-of-staff:
+    role: "ceo"
+    adapter:
+      config:
+        access.COINBASE:
+          version: "latest"
+          secretId: "b62b34f4-3911-42d2-a0fb-98d6d1964d1f"
+          type: "secret_ref"
+        dangerouslySkipPermissions: true
+        model: "Fable"
+      type: "claude_local"
+    runtime:
+      heartbeat:
+        intervalSec: 300
+        skipTimerWhenNoActionableWork: true
+    permissions:
+      canCreateAgents: true
+      canCreateSkills: true
+    permissionGrants:
+      -
+        permissionKey: "agents:configure"
+      -
+        permissionKey: "skills:create"
+      -
+        permissionKey: "tasks:assign"
+  growth-engineer:
+    role: "engineer"
+    adapter:
+      config:
+        command: "claude"
+        model: "Fable"
+      type: "claude_local"
+    permissions:
+      canCreateSkills: true
+    permissionGrants:
+      -
+        permissionKey: "tasks:assign"
+  research-agent:
+    role: "researcher"
+    adapter:
+      config:
+        model: "Fable"
+      type: "claude_local"
+    permissions:
+      canCreateSkills: true
+    permissionGrants:
+      -
+        permissionKey: "tasks:assign"
+company:
+  attachmentMaxBytes: 10485760
+schemaVersion: 7
+sidebar:
+  agents:
+    - "chief-of-staff"
+    - "growth-engineer"
+    - "research-agent"
