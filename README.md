@@ -9,7 +9,9 @@
 | Content | Count |
 |---------|-------|
 | Agents | 3 |
+| Projects | 2 |
 | Skills | 5 |
+| Tasks | 13 |
 
 ### Agents
 
@@ -18,6 +20,11 @@
 | Chief of staff | CEO | — |
 | Growth Engineer | Engineer | — |
 | Research Agent | researcher | — |
+
+### Projects
+
+- **Money**
+- **Onboarding**
 
 ### Skills
 
